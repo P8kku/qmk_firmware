@@ -21,8 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define SPLIT_LED_STATE_ENABLE
 #define GRAVE_ESC_ALT_OVERRIDE
 #define GRAVE_ESC_CTRL_OVERRIDE
-#define ENCODERS_PAD_A { B12 }
-#define ENCODERS_PAD_B { B13 }
+#define ENCODER_RESOLUTION 4
 #ifdef RGB_MATRIX_ENABLE
 
 // Configure RGB Matrix
