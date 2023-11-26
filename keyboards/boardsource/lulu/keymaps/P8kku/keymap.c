@@ -22,6 +22,17 @@
 */
 
 #include QMK_KEYBOARD_H
+#define RAISE MO(_RAISE)
+#define LOWER MO(_LOWER)
+//#define SftEnt  SFT_T(KC_ENT)   // Shift when held, Enter when tapped
+//#define BSCTL   LCTL_T(KC_BSPC) // Ctrl when held, Backspace when tapped
+//tap macro examples
+
+
+//#define ZOOM_IN KC_MS_WH_UP(KC_LEFT_CTRL) //QWERTY KEYMAP ENCODER DEF
+//#define ZOOM_OUT KC_MS_WH_DOWN(KC_LEFT_CTRL)
+#define LW_ZOOM_IN LCTL(KC_MINUS) //LOWER MOD KEYMAP ENCODER DEF
+#define LW_ZOOM_OUT LCTL(KC_EQUAL)
 
 enum layers {
     _QWERTY,
@@ -45,19 +56,6 @@ enum combos{
     CTL8_RBRC,
     CTLSLSH_BKSLSH
 };
-
-#define RAISE MO(_RAISE)
-#define LOWER MO(_LOWER)
-
-//#define SftEnt  SFT_T(KC_ENT)   // Shift when held, Enter when tapped
-//#define BSCTL   LCTL_T(KC_BSPC) // Ctrl when held, Backspace when tapped
-//tap macro examples
-
-
-//#define ZOOM_IN KC_MS_WH_UP(KC_LEFT_CTRL) //QWERTY KEYMAP ENCODER DEF
-//#define ZOOM_OUT KC_MS_WH_DOWN(KC_LEFT_CTRL)
-#define LW_ZOOM_IN LCTL(KC_MINUS) //LOWER MOD KEYMAP ENCODER DEF
-#define LW_ZOOM_OUT LCTL(KC_EQUAL)
 
 /* TODO potentially use combo functionality to accomplish this?
 
