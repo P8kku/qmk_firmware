@@ -68,12 +68,12 @@ make: ctrl+/= '\'
 
 */
 
-const uint16_t PROMMEM DELETE_DEF[] = {KC_LCTL, KC_BSPC, COMBO_END};
-const uint16_t PROMMEM HOME_DEF[] = {KC_LCTL, KC_ENT, COMBO_END};
-const uint16_t PROMMEM END_DEF[] = {KC_LCTL, KC_LSFT, KC_BSPC, COMBO_END};
-const uint16_t PROMMEM LBRC_DEF[] = {KC_LCTL, KC_9, COMBO_END};
-const uint16_t PROMMEM RBRC_DEF[] = {KC_LCTL, KC_8, COMBO_END};
-const uint16_t PROMMEM BACKSLASH_DEF[] = {KC_LCTL, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM DELETE_DEF[] = {KC_LCTL, KC_BSPC, COMBO_END};
+const uint16_t PROGMEM HOME_DEF[] = {KC_LCTL, KC_ENT, COMBO_END};
+const uint16_t PROGMEM END_DEF[] = {KC_LCTL, KC_LSFT, KC_BSPC, COMBO_END};
+const uint16_t PROGMEM LBRC_DEF[] = {KC_LCTL, KC_9, COMBO_END};
+const uint16_t PROGMEM RBRC_DEF[] = {KC_LCTL, KC_8, COMBO_END};
+const uint16_t PROGMEM BACKSLASH_DEF[] = {KC_LCTL, KC_SLSH, COMBO_END};
 
 combo_t key_combos[]={
 
