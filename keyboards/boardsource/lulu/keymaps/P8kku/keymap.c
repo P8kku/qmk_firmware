@@ -37,6 +37,15 @@ enum custom_keycodes {
   LWZOOMOUT
 };
 
+enum combos{
+    CTLBSP_DEL,
+    CTLENT_HOME,
+    CTLSHFTBSPC_END,
+    CTL9_LBRC,
+    CTL8_RBRC,
+    CTLSLSH_BKSLSH
+};
+
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
 
@@ -61,12 +70,23 @@ make: ctrl+/= '\'
 
 */
 
-const uint16_t PROMMEM S_DELETE[] = {KC_LCTL, KC_BSPC, COMBO_END};
-const uint16_t PROMMEM S_HOME[] = {KC_LCTL, KC_ENT, COMBO_END};
-const uint16_t PROMMEM S_END[] = {KC_LCTL, KC_LSFT, KC_BSPC, COMBO_END};
-const uint16_t PROMMEM S_LBRC[] = {KC_LCTL, KC_9, COMBO_END};
-const uint16_t PROMMEM S_RBRC[] = {KC_LCTL, KC_8, COMBO_END};
-const uint16_t PROMMEM S_BACKSLASH[] = {KC_LCTL, KC_SLSH, COMBO_END};
+const uint16_t PROMMEM DELETE_DEF[] = {KC_LCTL, KC_BSPC, COMBO_END};
+const uint16_t PROMMEM HOME_DEF[] = {KC_LCTL, KC_ENT, COMBO_END};
+const uint16_t PROMMEM END_DEF[] = {KC_LCTL, KC_LSFT, KC_BSPC, COMBO_END};
+const uint16_t PROMMEM LBRC_DEF[] = {KC_LCTL, KC_9, COMBO_END};
+const uint16_t PROMMEM RBRC_DEF[] = {KC_LCTL, KC_8, COMBO_END};
+const uint16_t PROMMEM BACKSLASH_DEF[] = {KC_LCTL, KC_SLSH, COMBO_END};
+
+combo_t key_combos[]={
+
+    [CTLBSP_DEL] = COMBO(DELETE_DEF, KC_DEL),
+    [CTLENT_HOME] = COMBO(HOME_DEF, KC_HOME),
+    [CTLSHFTBSPC_END] = COMBO(END_DEF, KC_END),
+    [CTL9_LBRC] = COMBO(LBRC_DEF, KC_LBRC),
+    [CTL8_RBRC] = COMBO(RBRC_DEF, KC_RBRC),
+    [CTLSLSH_BKSLSH] = COMBO(BACKSLASH_DEF, KC_BACKSLASH)
+
+}
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -120,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |      |      |      | DEL  |
+ * |CMBOTGL|     |      |      |      |      |                    |      |      |      |      |      | DEL  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                    |  F7  |  F8  |  F9  | F10  | F11  | HOME |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -133,7 +153,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
 [_LOWER] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                   _______, _______, _______,_______, _______, KC_DELETE,
+  QK_COMBO_TOGGLE, _______, _______, _______, _______, _______,                   _______, _______, _______,_______, _______, KC_DELETE,
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,                     KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_HOME,
   KC_GRV, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_TILD,
   _______, _______, _______, _______, _______, _______, _______, _______, KC_PIPE, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_BACKSLASH,
