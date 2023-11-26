@@ -84,7 +84,7 @@ combo_t key_combos[]={
     [CTL8_RBRC] = COMBO(RBRC_DEF, KC_RBRC),
     [CTLSLSH_BKSLSH] = COMBO(BACKSLASH_DEF, KC_BACKSLASH)
 
-}
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
