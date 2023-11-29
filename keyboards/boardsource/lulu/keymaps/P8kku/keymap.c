@@ -73,7 +73,7 @@ const uint16_t PROGMEM HOME_DEF[] = {KC_LCTL, KC_ENT, COMBO_END};
 const uint16_t PROGMEM END_DEF[] = {KC_LCTL, KC_LSFT, KC_BSPC, COMBO_END};
 const uint16_t PROGMEM LBRC_DEF[] = {KC_LCTL, KC_9, COMBO_END};
 const uint16_t PROGMEM RBRC_DEF[] = {KC_LCTL, KC_8, COMBO_END};
-const uint16_t PROGMEM BACKSLASH_DEF[] = {KC_LCTL, KC_SLSH, COMBO_END};
+const uint16_t PROGMEM BACKSLASH_DEF[] =   {KC_LCTL, KC_SLSH, COMBO_END};
 
 combo_t key_combos[]={
 
@@ -193,4 +193,11 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
    return update_tri_layer_state(state, _LOWER, _RAISE, _FL);
+};
+
+void keyboard_post_init_user(void) {
+  debug_enable=true;
+  debug_matrix=true;
+  debug_keyboard=true;
+  //debug_mouse=true;
 };
